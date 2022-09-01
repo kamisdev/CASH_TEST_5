@@ -435,11 +435,13 @@ fn input_set_coin_limit(cash_limit: HashMap<usize, i32>) -> HashMap<usize, i32> 
 }
 
 fn main() {
+    let mut cash_limit = HashMap::new();
+    let mut cash_box = HashMap::new();
     loop {
 
         let coin_array = [2.00, 1.00, 0.50, 0.20, 0.10, 0.05, 0.02, 0.01];
-        let mut cash_box = HashMap::new();
-        let mut cash_limit = HashMap::new();
+        
+
         for coin in coin_array {
             let coin = (coin*100.0) as usize;
             cash_box.insert(coin, 20);
